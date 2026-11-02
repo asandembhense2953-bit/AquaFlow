@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Reliable plumbing services with 24/7 emergency support. Affordable plumbing solutions for homes and businesses in South Africa.">
+<title>AquaFlow Plumbing | Reliable Plumbing & Emergency Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#C0E2C9;
+    --ink:#0A0A0A;
+    --ink-soft:#33392E;
+    --muted:#5C6B5A;
+    --line:#AFD4B8;
+    --card:#FFFFFF;
+    --accent:#00CC33;
+    --accent-dark:#00A82A;
+    --accent-soft:#DFF5E4;
+    --amber:#C98A3B;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-sm:12px;
+    --shadow-soft:0 20px 40px -20px rgba(20,33,29,0.18);
+    --shadow-card:0 12px 30px -18px rgba(20,33,29,0.25);
+    --maxw:1280px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Outfit', sans-serif;
+    letter-spacing:-0.02em;
+    line-height:1.05;
+    color:var(--ink);
+  }
+
+  .eyebrow{
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:16px;height:1px;
+    background:var(--accent);
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 22px;
+    border-radius:999px;
+    font-family:'Outfit', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:-0.01em;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(0.97);}
+
+  .btn-dark{
+    background:var(--ink);
+    color:#fff;
+  }
+  .btn-dark:hover{background:var(--accent-dark); box-shadow:var(--shadow-card); transform:translateY(-2px);}
+
+  .btn-light{
+    background:#fff;
+    color:var(--ink);
+    border:1px solid var(--line);
+  }
+  .btn-light:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-2px);}
+
+  .btn-ghost{
+    background:transparent;
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.35);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.12); border-color:#fff;}
+
+  .btn-icon{
+    width:34px;height:34px;
+    border-radius:50%;
+    background:var(--accent);
+    display:inline-flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .btn-icon svg{width:14px;height:14px;stroke:#fff;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;
+    top:18px;left:0;right:0;
+    z-index:1000;
+    transition:transform .35s ease, opacity .35s ease;
+  }
+  header.nav-hidden{
+    transform:translateY(-130%);
+    opacity:0;
+  }
+  .nav-pill{
+    max-width:var(--maxw);
+    margin:0 auto;
+    background:rgba(192,226,201,0.78);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(20,33,29,0.08);
+    border-radius:999px;
+    padding:10px 12px 10px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 10px 30px -18px rgba(20,33,29,0.25);
+  }
+  .logo{
+    font-family:'Outfit', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    display:flex;align-items:center;gap:9px;
+    letter-spacing:-0.01em;
+  }
+  .logo-mark{
+    width:30px;height:30px;
+    border-radius:9px;
+    background:var(--accent);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .logo-mark svg{width:16px;height:16px;stroke:#fff;fill:none;}
+  .logo-mark img{width:100%;height:100%;object-fit:cover;display:block;}
+  .logo span{color:var(--accent);}
+
+  .nav-links{
+    display:flex;
+    list-style:none;
+    gap:6px;
+    align-items:center;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-weight:500;
+    font-size:14.5px;
+    padding:9px 16px;
+    border-radius:999px;
+    transition:all .2s ease;
+  }
+  .nav-links a:hover{background:rgba(20,33,29,0.06); color:var(--ink);}
+
+  .nav-right{display:flex;align-items:center;gap:10px;}
+
+  .mobile-menu{
+    display:none;
+    width:38px;height:38px;
+    border-radius:50%;
+    align-items:center;justify-content:center;
+    cursor:pointer;
+    background:rgba(20,33,29,0.06);
+  }
+  .mobile-menu svg{width:18px;height:18px;stroke:var(--ink);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100dvh;
+    display:flex;
+    align-items:flex-end;
+    padding:130px 0 0;
+    overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute; inset:0;
+    background:
+      linear-gradient(180deg, rgba(10,22,19,0.55) 0%, rgba(8,16,14,0.35) 40%, rgba(6,12,10,0.82) 100%),
+      url('https://images.pexels.com/photos/6195279/pexels-photo-6195279.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center / cover;
+    z-index:-1;
+  }
+  .hero-inner{
+    width:100%;
+    padding-bottom:64px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:40px;
+    align-items:end;
+  }
+  .hero-copy .eyebrow{color:#B7E8BE;}
+  .hero-copy .eyebrow::before{background:#B7E8BE;}
+  .hero-copy h1{
+    color:#fff;
+    font-size:clamp(38px, 5.4vw, 68px);
+    font-weight:700;
+    margin:18px 0 20px;
+    max-width:14ch;
+  }
+  .hero-copy p{
+    color:rgba(255,255,255,0.78);
+    font-size:17px;
+    max-width:46ch;
+    margin-bottom:32px;
+  }
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; align-items:center;}
+
+  .hero-rating{
+    display:flex;align-items:center;gap:10px;
+    margin-top:36px;
+  }
+  .stars{display:flex;gap:3px;}
+  .stars svg{width:15px;height:15px;fill:#E8B24D;}
+  .hero-rating span{color:rgba(255,255,255,0.75); font-size:13.5px;}
+
+  .hero-side{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    align-items:flex-end;
+  }
+
+  .float-card{
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.5);
+    border-radius:var(--radius-md);
+    padding:20px 22px;
+    box-shadow:var(--shadow-soft);
+    width:100%;
+    max-width:340px;
+  }
+  .float-card .row{
+    display:flex;align-items:center; justify-content:space-between; gap:14px;
+  }
+  .float-stat{
+    display:flex;align-items:center;gap:14px;
+  }
+  .float-stat .num{
+    font-family:'Outfit',sans-serif;
+    font-weight:700;
+    font-size:30px;
+    color:var(--ink);
+    line-height:1;
+    display:flex;align-items:center;gap:8px;
+  }
+  .pulse-dot{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--accent);
+    position:relative;
+    flex-shrink:0;
+  }
+  .pulse-dot::after{
+    content:'';
+    position:absolute; inset:-6px;
+    border-radius:50%;
+    border:1.5px solid var(--accent);
+    animation:pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{transform:scale(0.6); opacity:0.9;}
+    100%{transform:scale(1.9); opacity:0;}
+  }
+  .float-stat .lbl{font-size:12.5px; color:var(--muted); max-width:16ch; line-height:1.3;}
+
+  .avatar-stack{display:flex;}
+  .avatar-stack img{
+    width:32px;height:32px;border-radius:50%;
+    border:2px solid #fff;
+    object-fit:cover;
+    margin-left:-10px;
+  }
+  .avatar-stack img:first-child{margin-left:0;}
+
+  .float-card-link{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-top:14px; padding-top:14px;
+    border-top:1px solid var(--line);
+    font-size:13.5px; font-weight:600; color:var(--ink);
+    text-decoration:none;
+  }
+  .float-card-link svg{width:14px;height:14px;stroke:var(--accent);}
+
+  /* ---------- SECTION SHELLS ---------- */
+  section{padding:110px 0;}
+  .section-head{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:40px;
+    align-items:end;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(28px,3.4vw,42px);
+    font-weight:700;
+    margin-top:14px;
+  }
+  .section-head p{color:var(--ink-soft); font-size:16px; max-width:44ch;}
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--bg);}
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .service-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-card);
+    border-color:rgba(0,204,51,0.3);
+  }
+  .service-image{
+    position:relative;
+    aspect-ratio:4/3;
+    overflow:hidden;
+  }
+  .service-image img{
+    width:100%;height:100%;
+    object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .service-card:hover .service-image img{transform:scale(1.06);}
+  .service-body{padding:26px 28px 32px;}
+  .service-icon{
+    width:52px;height:52px;
+    border-radius:14px;
+    background:var(--card);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 20px -8px rgba(10,10,10,0.35);
+    position:absolute;
+    left:24px; bottom:-26px;
+    border:1px solid var(--line);
+  }
+  .service-icon svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.6;}
+  .service-card h3{font-size:20px; margin:16px 0 14px;}
+  .service-card ul{list-style:none; margin-bottom:22px;}
+  .service-card li{
+    display:flex;align-items:flex-start;gap:9px;
+    font-size:14.5px; color:var(--ink-soft);
+    margin-bottom:9px;
+  }
+  .service-card li svg{width:15px;height:15px;stroke:var(--accent);flex-shrink:0;margin-top:2px;}
+  .service-card .btn{width:100%; justify-content:center;}
+  .btn-group{display:flex; flex-wrap:wrap; gap:10px;}
+  .btn-group .btn{flex:1 1 130px; width:auto;}
+  @media (max-width:420px){
+    .btn-group{flex-direction:column;}
+    .btn-group .btn{width:100%;}
+  }
+
+  /* ---------- GALLERY ---------- */
+  .gallery{background:var(--bg);}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:130px 130px 220px;
+    gap:16px;
+  }
+  .gallery-item{
+    position:relative;
+    display:block;
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .gallery-item img{
+    width:100%;height:100%;
+    object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .gallery-item:hover img{transform:scale(1.06);}
+  .gallery-cap{
+    position:absolute; left:14px; bottom:14px;
+    background:rgba(14,21,18,0.75);
+    color:#fff;
+    font-size:12.5px; font-weight:600;
+    padding:7px 12px;
+    border-radius:999px;
+    opacity:0; transform:translateY(6px);
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  .gallery-item:hover .gallery-cap{opacity:1; transform:translateY(0);}
+  .g-1{grid-column:1 / 3; grid-row:1 / 3;}
+  .g-2{grid-column:3 / 4; grid-row:1 / 2;}
+  .g-3{grid-column:4 / 5; grid-row:1 / 3;}
+  .g-4{grid-column:3 / 4; grid-row:2 / 3;}
+  .g-5{grid-column:1 / 5; grid-row:3 / 4;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials{background:var(--ink); color:#fff;}
+  .testimonials .eyebrow{color:#7FDB8E;}
+  .testimonials .eyebrow::before{background:#7FDB8E;}
+  .testimonials .section-head h2{color:#fff;}
+  .testimonials .section-head p{color:rgba(255,255,255,0.6);}
+  .testimonials-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .testimonial-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:var(--radius-lg);
+    padding:28px;
+    transition:transform .3s ease, background .3s ease;
+  }
+  .testimonial-card:hover{transform:translateY(-6px); background:rgba(255,255,255,0.08);}
+  .testimonial-top{display:flex;align-items:center;gap:12px; margin-bottom:18px;}
+  .testimonial-top img{width:46px;height:46px;border-radius:50%;object-fit:cover;}
+  .testimonial-top h4{font-size:15px; color:#fff; font-weight:600;}
+  .testimonial-top p{font-size:12.5px; color:rgba(255,255,255,0.5);}
+  .testimonial-card blockquote{font-size:14.5px; color:rgba(255,255,255,0.8); margin-bottom:16px;}
+  .testimonial-card .stars svg{fill:#E8B24D;}
+
+  /* ---------- PRICING ---------- */
+  .pricing{background:var(--bg);}
+  .pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .price-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:34px 28px;
+    display:flex;flex-direction:column;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .price-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-card);}
+  .price-card.featured{
+    background:var(--ink); color:#fff;
+    border-color:var(--ink);
+  }
+  .price-card h3{font-size:17px; font-weight:600; margin-bottom:4px;}
+  .price-card .plan-note{font-size:13px; color:var(--muted); margin-bottom:22px;}
+  .price-card.featured .plan-note{color:rgba(255,255,255,0.55);}
+  .price{
+    font-family:'Outfit',sans-serif;
+    font-size:38px; font-weight:700;
+    margin-bottom:22px;
+  }
+  .price span{font-size:14px; font-weight:400; color:var(--muted); font-family:'Plus Jakarta Sans',sans-serif;}
+  .price-card.featured .price span{color:rgba(255,255,255,0.55);}
+  .price-card ul{list-style:none; margin-bottom:26px; flex-grow:1;}
+  .price-card li{
+    display:flex;align-items:flex-start;gap:9px;
+    font-size:14px; padding:9px 0;
+    border-bottom:1px solid var(--line);
+    color:var(--ink-soft);
+  }
+  .price-card.featured li{border-color:rgba(255,255,255,0.12); color:rgba(255,255,255,0.75);}
+  .price-card li svg{width:14px;height:14px;stroke:var(--accent);flex-shrink:0;margin-top:3px;}
+  .price-card.featured li svg{stroke:#7FDB8E;}
+  .price-card .btn{width:100%; justify-content:center;}
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--bg);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+    align-items:center;
+  }
+  .about-image{
+    position:relative;
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    aspect-ratio:4/5;
+  }
+  .about-image img{width:100%;height:100%;object-fit:cover;}
+  .about-badge{
+    position:absolute;
+    bottom:20px; left:20px; right:20px;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px);
+    border-radius:var(--radius-sm);
+    padding:16px 18px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .about-badge .num{font-family:'Outfit',sans-serif; font-weight:700; font-size:24px; color:var(--accent);}
+  .about-badge p{font-size:12.5px; color:var(--ink-soft); line-height:1.3;}
+
+  .about-text h3{font-size:clamp(26px,3vw,36px); margin-bottom:18px;}
+  .about-text p{color:var(--ink-soft); font-size:15.5px; margin-bottom:16px; max-width:52ch;}
+  .about-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin:26px 0 30px;
+  }
+  .about-list div{
+    display:flex; align-items:flex-start; gap:10px;
+    font-size:14px; color:var(--ink-soft);
+  }
+  .about-list svg{width:16px;height:16px;stroke:var(--accent);flex-shrink:0;margin-top:2px;}
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:var(--accent);
+    color:#fff;
+    text-align:left;
+    border-radius:var(--radius-lg);
+    margin:0 32px;
+    padding:64px 56px;
+    max-width:calc(var(--maxw) - 64px);
+    margin-left:auto;margin-right:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+  }
+  .cta h2{color:#fff; font-size:clamp(26px,3vw,34px); max-width:16ch;}
+  .cta p{color:rgba(255,255,255,0.85); margin-top:10px; max-width:40ch;}
+  .cta .btn-light:hover{color:var(--accent);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink); color:rgba(255,255,255,0.7); padding:90px 0 30px; margin-top:90px;}
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1.1fr;
+    gap:40px;
+    margin-bottom:60px;
+  }
+  .footer-col h3{color:#fff; font-size:15px; font-weight:600; margin-bottom:18px; font-family:'Outfit',sans-serif;}
+  .footer-col p{font-size:13.5px; line-height:1.7; color:rgba(255,255,255,0.55);}
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:11px;}
+  .footer-col a{text-decoration:none; font-size:13.5px; color:rgba(255,255,255,0.6); transition:color .2s;}
+  .footer-col a:hover{color:#7FDB8E;}
+  .footer-col .logo{color:#fff; margin-bottom:16px;}
+  .socials{display:flex; gap:10px; margin-top:20px;}
+  .socials a{
+    width:36px;height:36px;border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .socials a svg{width:15px;height:15px;stroke:#fff;fill:none;}
+  .socials a:hover{background:var(--accent);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:24px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; color:rgba(255,255,255,0.4);
+    flex-wrap:wrap; gap:10px;
+  }
+  .footer-bottom a{color:rgba(255,255,255,0.5); text-decoration:none; margin-left:18px;}
+
+  /* ---------- CHATBOT ---------- */
+  .chat-toggle{
+    position:fixed; right:26px; bottom:26px;
+    width:58px;height:58px; border-radius:50%;
+    background:var(--accent);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer; z-index:1200;
+    box-shadow:0 14px 30px -10px rgba(14,107,92,0.55);
+    border:none;
+    transition:transform .25s ease;
+  }
+  .chat-toggle:hover{transform:translateY(-3px);}
+  .chat-toggle svg{width:24px;height:24px;stroke:#fff;fill:none;transition:opacity .2s ease, transform .2s ease;}
+  .chat-toggle .icon-close{position:absolute; opacity:0; transform:rotate(-45deg);}
+  .chat-toggle.open .icon-chat{opacity:0; transform:rotate(45deg);}
+  .chat-toggle.open .icon-close{opacity:1; transform:rotate(0);}
+
+  .chat-panel{
+    position:fixed; right:26px; bottom:96px;
+    width:340px; max-width:calc(100vw - 40px);
+    height:440px; max-height:calc(100vh - 160px);
+    background:var(--card);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-soft);
+    border:1px solid var(--line);
+    display:flex; flex-direction:column;
+    overflow:hidden;
+    z-index:1199;
+    opacity:0; visibility:hidden; transform:translateY(16px) scale(0.98);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s;
+    transform-origin:bottom right;
+  }
+  .chat-panel.active{opacity:1; visibility:visible; transform:translateY(0) scale(1);}
+
+  .chat-head{
+    background:var(--ink);
+    color:#fff;
+    padding:16px 18px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .chat-head .dot{width:8px;height:8px;border-radius:50%;background:#7FDB8E;}
+  .chat-head h4{font-size:14.5px; font-family:'Outfit',sans-serif;}
+  .chat-head p{font-size:11.5px; color:rgba(255,255,255,0.55);}
+
+  .chat-body{
+    flex:1; overflow-y:auto;
+    padding:16px;
+    display:flex; flex-direction:column; gap:10px;
+    background:var(--bg);
+  }
+  .msg{
+    max-width:82%;
+    padding:10px 13px;
+    border-radius:14px;
+    font-size:13.5px;
+    line-height:1.5;
+  }
+  .msg.bot{
+    background:var(--card);
+    border:1px solid var(--line);
+    align-self:flex-start;
+    border-bottom-left-radius:4px;
+  }
+  .msg.user{
+    background:var(--accent);
+    color:#fff;
+    align-self:flex-end;
+    border-bottom-right-radius:4px;
+  }
+  .quick-replies{display:flex; flex-wrap:wrap; gap:6px; margin-top:2px;}
+  .quick-replies button{
+    font-size:12px; font-weight:600;
+    padding:7px 12px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:#fff;
+    cursor:pointer;
+    color:var(--ink);
+    transition:all .2s ease;
+  }
+  .quick-replies button:hover{border-color:var(--accent); color:var(--accent);}
+
+  .chat-input{
+    display:flex; gap:8px;
+    padding:12px;
+    border-top:1px solid var(--line);
+    background:var(--card);
+  }
+  .chat-input input{
+    flex:1;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:10px 16px;
+    font-size:13.5px;
+    font-family:inherit;
+    outline:none;
+    background:var(--bg);
+  }
+  .chat-input input:focus{border-color:var(--accent);}
+  .chat-input button{
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--accent);
+    border:none;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .chat-input button svg{width:15px;height:15px;stroke:#fff;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-side{align-items:flex-start;}
+    .services-grid, .testimonials-grid, .pricing-grid{grid-template-columns:1fr 1fr;}
+    .section-head{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-template-rows:repeat(3,160px);}
+    .g-1{grid-column:1/3; grid-row:1/2;}
+    .g-2{grid-column:1/2; grid-row:2/3;}
+    .g-3{grid-column:2/3; grid-row:2/3;}
+    .g-4{grid-column:1/2; grid-row:3/4;}
+    .g-5{grid-column:2/3; grid-row:3/4;}
+  }
+  @media (max-width: 760px){
+    .wrap{padding:0 20px;}
+    .nav-links{
+      position:fixed; top:82px; left:20px; right:20px;
+      background:var(--card);
+      border-radius:20px;
+      flex-direction:column;
+      align-items:stretch;
+      padding:14px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      display:none;
+      gap:2px;
+    }
+    .nav-links.active{display:flex;}
+    .nav-links a{padding:12px 14px;}
+    .mobile-menu{display:flex;}
+    .nav-pill{padding:8px 8px 8px 16px;}
+    .services-grid, .testimonials-grid, .pricing-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:1fr; grid-template-rows:none;}
+    .gallery-item{grid-column:1/2 !important; grid-row:auto !important; height:220px;}
+    .cta{flex-direction:column; align-items:flex-start; margin:0 20px; padding:40px 28px;}
+    .chat-panel{right:16px; left:16px; width:auto;}
+    .chat-toggle{right:20px; bottom:20px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="wrap">
+    <div class="nav-pill">
+      <div class="logo">
+        <span class="logo-mark">
+          <img src="https://i.postimg.cc/PqS2ghjr/imgg.png" alt="AquaFlow logo">
+        </span>
+        Aqua<span>Flow</span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="tel:+27115551234" class="btn btn-dark">
+          Contact Us
+          <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <div class="mobile-menu" id="mobile-toggle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">24/7 Emergency Plumbing</span>
+        <h1>Reliable plumbing, sorted fast.</h1>
+        <p>Licensed plumbers for homes and businesses across South Africa. Leaks, blockages and burst pipes fixed — day or night.</p>
+        <div class="hero-actions">
+          <a href="tel:+27115551234" class="btn btn-dark">
+            Request Emergency Service
+            <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </a>
+          <a href="#services" class="btn btn-ghost">See Services</a>
+        </div>
+        <div class="hero-rating">
+          <div class="stars">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          </div>
+          <span>500+ verified reviews</span>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="float-card">
+          <div class="row">
+            <div class="float-stat">
+              <div class="pulse-dot"></div>
+              <div class="num">2 hrs</div>
+            </div>
+            <div class="avatar-stack">
+              <img src="https://images.pexels.com/photos/19596247/pexels-photo-19596247.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="">
+              <img src="https://images.pexels.com/photos/19039168/pexels-photo-19039168.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="">
+              <img src="https://images.pexels.com/photos/20209020/pexels-photo-20209020.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="">
+            </div>
+          </div>
+          <p class="lbl" style="font-size:12.5px;color:var(--muted);margin-top:10px;">Average emergency response time, day or night.</p>
+          <a href="tel:+27115551234" class="float-card-link">
+            Speak to a plumber now
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">What we do</span>
+        <h2>Plumbing services built around your day</h2>
+      </div>
+      <p>From a dripping tap to a full commercial sewer line, our licensed team handles it with the same fast, tidy standard every time.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Plumber installing residential pipe fittings">
+        </div>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Residential Plumbing</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Leak detection & repair</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Pipe installation & repair</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Water heater servicing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Drain cleaning</li>
+          </ul>
+          <a href="#contact" class="btn btn-light">Get a Quote</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.pexels.com/photos/8933650/pexels-photo-8933650.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Modern commercial office building">
+        </div>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 21v-4h6v4M9 7h1M14 7h1M9 11h1M14 11h1"/></svg>
+          </div>
+          <h3>Commercial Plumbing</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Backflow prevention</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Sewer line services</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Grease trap cleaning</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Water main repair</li>
+          </ul>
+          <a href="#contact" class="btn btn-light">Get a Quote</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.pexels.com/photos/15206136/pexels-photo-15206136.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Emergency pipe leak repair">
+        </div>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h3>Emergency Services</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>24/7 availability</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Burst pipe repair</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Sewage backup</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Gas line leaks</li>
+          </ul>
+          <div class="btn-group">
+            <a href="https://wa.me/27735726119?text=Hi%20AquaFlow%2C%20I%20need%20a%20quote%20for%20emergency%20plumbing%20services." class="btn btn-dark" target="_blank" rel="noopener">Get Quote</a>
+            <a href="#contact" class="btn btn-light">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.pexels.com/photos/33528567/pexels-photo-33528567.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Drain and sewer fixture close-up">
+        </div>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 12a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2M4 12a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2"/></svg>
+          </div>
+          <h3>Drain & Sewer Cleaning</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Camera drain inspection</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Hydro jetting</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Root removal</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Blocked toilet clearing</li>
+          </ul>
+          <a href="#contact" class="btn btn-light">Get a Quote</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.pexels.com/photos/6444979/pexels-photo-6444979.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Water heater and fixture installation">
+        </div>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <h3>Water Heater Installation</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Gas & electric geysers</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Solar geyser retrofits</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Tankless conversions</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Safety valve checks</li>
+          </ul>
+          <a href="#contact" class="btn btn-light">Get a Quote</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://images.pexels.com/photos/6436770/pexels-photo-6436770.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Modern bathroom remodel with shower cabin">
+        </div>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="1"/><path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M3 14h18"/></svg>
+          </div>
+          <h3>Bathroom Remodeling</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Full re-piping</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Shower & tub installs</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Vanity & fixture fitting</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Waterproofing</li>
+          </ul>
+          <a href="#contact" class="btn btn-light">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Recent work</span>
+        <h2>A look at jobs we've completed</h2>
+      </div>
+      <p>A snapshot of installs, repairs and remodels from across our residential and commercial projects.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <a class="gallery-item g-1" href="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=1200" target="_blank" rel="noopener">
+        <img src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Plumber installing pipe fittings">
+        <span class="gallery-cap">Pipe fitting & installation</span>
+      </a>
+      <a class="gallery-item g-2" href="https://images.pexels.com/photos/33528567/pexels-photo-33528567.jpeg?auto=compress&cs=tinysrgb&w=1200" target="_blank" rel="noopener">
+        <img src="https://images.pexels.com/photos/33528567/pexels-photo-33528567.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Finished minimalist bathroom sink and faucet">
+        <span class="gallery-cap">Sink & faucet fitting</span>
+      </a>
+      <a class="gallery-item g-3" href="https://images.pexels.com/photos/6444979/pexels-photo-6444979.jpeg?auto=compress&cs=tinysrgb&w=1200" target="_blank" rel="noopener">
+        <img src="https://images.pexels.com/photos/6444979/pexels-photo-6444979.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Completed bathroom counter and faucet renovation">
+        <span class="gallery-cap">Bathroom renovation</span>
+      </a>
+      <a class="gallery-item g-4" href="https://images.pexels.com/photos/6436770/pexels-photo-6436770.jpeg?auto=compress&cs=tinysrgb&w=1200" target="_blank" rel="noopener">
+        <img src="https://images.pexels.com/photos/6436770/pexels-photo-6436770.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Modern shower cabin installation">
+        <span class="gallery-cap">Shower cabin install</span>
+      </a>
+      <a class="gallery-item g-5" href="https://images.pexels.com/photos/4194864/pexels-photo-4194864.jpeg?auto=compress&cs=tinysrgb&w=1200" target="_blank" rel="noopener">
+        <img src="https://images.pexels.com/photos/4194864/pexels-photo-4194864.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Close-up of a working shower head fitting">
+        <span class="gallery-cap">Fixture detailing</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Customer stories</span>
+        <h2>What our customers say</h2>
+      </div>
+      <p>Real feedback from homeowners and businesses we've helped across the country.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-top">
+          <img src="https://images.pexels.com/photos/19596247/pexels-photo-19596247.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Naledi Dlamini">
+          <div>
+            <h4>Naledi Dlamini</h4>
+            <p>Homeowner, Soweto</p>
+          </div>
+        </div>
+        <blockquote>AquaFlow got our water heater back up within a day in the middle of winter. The emergency team arrived within the hour.</blockquote>
+        <div class="stars">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-top">
+          <img src="https://images.pexels.com/photos/19039168/pexels-photo-19039168.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Thabo Mbeki">
+          <div>
+            <h4>Thabo Mbeki</h4>
+            <p>Business Owner, Sandton</p>
+          </div>
+        </div>
+        <blockquote>A major sewer line issue could have shut our restaurant down for a week. AquaFlow had it sorted the same day.</blockquote>
+        <div class="stars">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-top">
+          <img src="https://images.pexels.com/photos/20209020/pexels-photo-20209020.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Lerato Mofokeng">
+          <div>
+            <h4>Lerato Mofokeng</h4>
+            <p>Property Manager, Pretoria</p>
+          </div>
+        </div>
+        <blockquote>We run 15 properties through AquaFlow for emergency call-outs. Response time and workmanship are consistently excellent.</blockquote>
+        <div class="stars">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+          <svg viewBox="0 0 20 20" style="opacity:0.35;"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9 4.4 18l1.4-6.2L1 7.5l6.4-.6z"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Transparent pricing</span>
+        <h2>Straightforward rates, no surprises</h2>
+      </div>
+      <p>All prices in South African Rand. Every call-out includes a written quote before work begins.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Basic Service</h3>
+        <p class="plan-note">For minor repairs & installs</p>
+        <div class="price">R1 350<span>/visit</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Diagnostic fee included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Minor repairs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>1 hour labor included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>6-month warranty</li>
+        </ul>
+        <a href="https://wa.me/27735726119?text=Hi%20AquaFlow%2C%20I%27d%20like%20to%20book%20the%20Basic%20Service%20plan." class="btn btn-light" target="_blank" rel="noopener">Choose This Plan</a>
+      </div>
+
+      <div class="price-card featured">
+        <h3>Emergency Service</h3>
+        <p class="plan-note">24/7, 2-hour response</p>
+        <div class="price">R2 250<span>/first hour</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>24/7 availability</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>All emergency repairs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Parts up to R1 500 included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>1-year warranty</li>
+        </ul>
+        <a href="https://wa.me/27735726119?text=Hi%20AquaFlow%2C%20I%20need%20the%20Emergency%20Service%20plan." class="btn btn-light" target="_blank" rel="noopener">Choose This Plan</a>
+      </div>
+
+      <div class="price-card">
+        <h3>Maintenance Plan</h3>
+        <p class="plan-note">Ongoing peace of mind</p>
+        <div class="price">R450<span>/month</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Annual inspection</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Priority scheduling</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>10% discount on repairs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Annual drain cleaning</li>
+        </ul>
+        <a href="https://wa.me/27735726119?text=Hi%20AquaFlow%2C%20I%27d%20like%20to%20sign%20up%20for%20the%20Maintenance%20Plan." class="btn btn-light" target="_blank" rel="noopener">Choose This Plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-image">
+      <img src="https://images.pexels.com/photos/6195279/pexels-photo-6195279.jpeg?auto=compress&cs=tinysrgb&w=900" alt="AquaFlow Plumbing team at work">
+      <div class="about-badge">
+        <div class="num">15+</div>
+        <p>Years fixing pipes and keeping South African homes running.</p>
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">About AquaFlow</span>
+      <h3>Professional plumbing, since 2005</h3>
+      <p>AquaFlow Plumbing has provided reliable plumbing services to residential and commercial clients for over 15 years. Our licensed plumbers are available 24/7 for emergency call-outs.</p>
+      <p>We pride ourselves on affordable plumbing solutions without compromising on quality — from a leaky faucet to a major pipe burst, our team is equipped to handle it.</p>
+      <div class="about-list">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.9 3H3.1L10 12v7l4-2v-5z"/></svg>Licensed & insured</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>24/7 availability</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Upfront written quotes</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Workmanship guaranteed</div>
+      </div>
+      <a href="#contact" class="btn btn-dark">Schedule a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<div class="cta" id="contact">
+  <div>
+    <h2>Need reliable plumbing services?</h2>
+    <p>Our team is ready 24 hours a day, 7 days a week — call now and get a plumber on the way.</p>
+  </div>
+  <a href="tel:+27115551234" class="btn btn-light">Call Now: (011) 555 1234</a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="logo">
+          <span class="logo-mark"><img src="https://i.postimg.cc/PqS2ghjr/imgg.png" alt="AquaFlow logo"></span>
+          Aqua<span style="color:var(--accent);">Flow</span>
+        </div>
+        <p>Reliable plumbing services and affordable solutions for homes and businesses since 2005.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v2a4 4 0 0 1 4-2c3 0 4 2 4 5v7h-4v-6c0-1.5-.5-2.5-2-2.5s-2 1-2 2.5v6h-4z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#services">Residential Plumbing</a></li>
+          <li><a href="#services">Commercial Plumbing</a></li>
+          <li><a href="#services">Emergency Services</a></li>
+          <li><a href="#services">Drain Cleaning</a></li>
+          <li><a href="#services">Water Heater Repair</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>123 Plumber St, Johannesburg</li>
+          <li><a href="tel:+27115551234">(011) 555 1234</a></li>
+          <li><a href="mailto:info@aquaflow.co.za">info@aquaflow.co.za</a></li>
+          <li>24/7 Emergency Service</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AquaFlow Plumbing. All Rights Reserved. Site by <a href="https://asande-mbhense.vercel.app/" target="_blank" rel="noopener" style="margin-left:0;">Asande Mbhense</a></p>
+      <div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== CHATBOT ===== -->
+<button class="chat-toggle" id="chat-toggle" aria-label="Open chat">
+  <svg class="icon-chat" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><circle cx="9" cy="14" r="1.3" fill="#fff" stroke="none"/><circle cx="15" cy="14" r="1.3" fill="#fff" stroke="none"/><path d="M9 17.5h6"/><path d="M2 13v3"/><path d="M22 13v3"/></svg>
+  <svg class="icon-close" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-head">
+    <div class="dot"></div>
+    <div>
+      <h4>AquaFlow Assistant</h4>
+      <p>Usually replies in a few minutes</p>
+    </div>
+  </div>
+  <div class="chat-body" id="chat-body">
+    <div class="msg bot">Hi, I'm the AquaFlow assistant. How can I help today?</div>
+    <div class="quick-replies" id="quick-replies">
+      <button data-msg="I have a plumbing emergency">Emergency</button>
+      <button data-msg="I'd like a quote">Get a quote</button>
+      <button data-msg="What are your prices?">Pricing</button>
+      <button data-msg="What services do you offer?">Services</button>
+    </div>
+  </div>
+  <form class="chat-input" id="chat-form">
+    <input type="text" id="chat-input" placeholder="Type a message…" autocomplete="off">
+    <button type="submit" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </form>
+</div>
+
+<script>
+  // Hide navbar on scroll down, reveal on scroll up
+  const siteHeader = document.querySelector('header');
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function handleScroll(){
+    const currentY = window.scrollY;
+    if (currentY > lastScrollY && currentY > 120){
+      siteHeader.classList.add('nav-hidden');
+    } else {
+      siteHeader.classList.remove('nav-hidden');
+    }
+    lastScrollY = currentY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking){
+      window.requestAnimationFrame(handleScroll);
+      ticking = true;
+    }
+  });
+
+  // Mobile nav
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navLinks = document.getElementById('nav-links');
+  mobileToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ---- Chatbot ----
+  const chatToggle = document.getElementById('chat-toggle');
+  const chatPanel = document.getElementById('chat-panel');
+  const chatBody = document.getElementById('chat-body');
+  const chatForm = document.getElementById('chat-form');
+  const chatInput = document.getElementById('chat-input');
+
+  chatToggle.addEventListener('click', () => {
+    chatPanel.classList.toggle('active');
+    chatToggle.classList.toggle('open');
+  });
+
+  function addMessage(text, who){
+    const div = document.createElement('div');
+    div.className = 'msg ' + who;
+    div.textContent = text;
+    chatBody.appendChild(div);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function botReply(userText){
+    const t = userText.toLowerCase();
+    let reply = "Thanks — I've passed that on to the team. For anything urgent, calling (011) 555 1234 gets you a plumber fastest.";
+
+    if (t.includes('emergency') || t.includes('burst') || t.includes('leak') || t.includes('flood')){
+      reply = "That sounds urgent. Our emergency line is open 24/7 — call (011) 555 1234 now and a plumber will be dispatched within 2 hours.";
+    } else if (t.includes('maintenance') || t.includes('monthly plan')){
+      reply = "Our Maintenance Plan is R450/month — it includes an annual inspection, priority scheduling, 10% off repairs and annual drain cleaning.";
+    } else if (t.includes('quote') || t.includes('price') || t.includes('cost') || t.includes('rate')){
+      reply = "Basic Service is R1 350/visit, Emergency Service is R2 250 for the first hour, and our Maintenance Plan is R450/month. Want me to have someone call you with a proper quote?";
+    } else if (t.includes('hour') || t.includes('open') || (t.includes('time') && !t.includes('response'))){
+      reply = "We're available 24/7, including weekends and public holidays.";
+    } else if (t.includes('response') || t.includes('how long') || t.includes('how fast')){
+      reply = "Our average emergency response time is 2 hours, day or night.";
+    } else if (t.includes('service') && (t.includes('what') || t.includes('which') || t.includes('offer') || t.includes('list'))){
+      reply = "We handle residential and commercial plumbing, emergency call-outs, drain & sewer cleaning, water heater installation, and bathroom remodeling. Which one do you need?";
+    } else if (t.includes('drain') || t.includes('sewer') || t.includes('block') || t.includes('clog')){
+      reply = "We do camera drain inspections, hydro jetting and root removal for blocked drains and sewer lines. Want a quote for that?";
+    } else if (t.includes('water heater') || t.includes('geyser') || t.includes('boiler')){
+      reply = "We install and repair gas, electric and solar geysers, plus tankless conversions. I can get you a quote if you share the type you have.";
+    } else if (t.includes('bathroom') || t.includes('remodel') || t.includes('renovat')){
+      reply = "Our bathroom remodeling covers re-piping, shower & tub installs, vanity fitting and waterproofing. Want to see photos of past work in our gallery section?";
+    } else if (t.includes('gallery') || t.includes('photo') || t.includes('picture') || t.includes('work you')){
+      reply = "You can see photos of our recent installs, repairs and remodels in the Gallery section on this page.";
+    } else if (t.includes('review') || t.includes('testimonial') || t.includes('rating')){
+      reply = "We're rated by 500+ customers — you can read a few of their stories in the Testimonials section above.";
+    } else if (t.includes('warranty') || t.includes('guarantee')){
+      reply = "Basic Service comes with a 6-month warranty, and Emergency Service includes a 1-year warranty on the work done.";
+    } else if (t.includes('where') || t.includes('location') || t.includes('address') || t.includes('based')){
+      reply = "We're based at 123 Plumber St, Johannesburg, and we cover the wider area for emergency call-outs.";
+    } else if (t.includes('contact') || t.includes('phone') || t.includes('call') || t.includes('number')){
+      reply = "You can reach us on (011) 555 1234, or email info@aquaflow.co.za — we're online 24/7 for emergencies.";
+    } else if (t.includes('thank')){
+      reply = "You're welcome — glad I could help. Anything else you'd like to know?";
+    } else if (/^(hi|hello|hey|howzit|good morning|good afternoon|good evening)\b/.test(t)){
+      reply = "Hi there! I can help with emergencies, quotes, pricing or general questions — what do you need?";
+    }
+    setTimeout(() => addMessage(reply, 'bot'), 500);
+  }
+
+  document.getElementById('quick-replies').addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON'){
+      const msg = e.target.getAttribute('data-msg');
+      addMessage(msg, 'user');
+      botReply(msg);
+    }
+  });
+
+  chatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const val = chatInput.value.trim();
+    if (!val) return;
+    addMessage(val, 'user');
+    botReply(val);
+    chatInput.value = '';
+  });
+</script>
+</body>
+</html>
